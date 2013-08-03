@@ -11,6 +11,7 @@ $loader = require __DIR__ . '/../vendor/autoload.php';
 AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 
 // Register modules
-AnnotationRegistry::registerAutoloadNamespace(array('Fightmaster' => __DIR__ . '/../vendor/dao/src'));
+/*AnnotationRegistry::registerAutoloadNamespace('Fightmaster', __DIR__ . '/../vendor/dao/src');
+AnnotationRegistry::registerAutoloadNamespace('Fightmaster', __DIR__ . '/../vendor/bundles');*/
 
 return $loader;
