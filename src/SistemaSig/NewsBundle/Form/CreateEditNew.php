@@ -33,20 +33,20 @@ class CreateEditNew extends AbstractType
         );
 
         $builder->add(
-            'summary',
-            'textarea',
-            array(
-                'label' => 'Resumen',
-                'required' => false
-            )
-        );
-
-        $builder->add(
             'body',
             'textarea',
             array(
                 'label' => 'Contenido',
                 'required' => true
+            )
+        );
+
+        $builder->add(
+            'summary',
+            'textarea',
+            array(
+                'label' => 'Resumen',
+                'required' => false
             )
         );
 

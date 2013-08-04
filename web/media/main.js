@@ -10,7 +10,10 @@ $(function () {
 jQuery(function ($) {
 
     // Calendar Jquery UI
-    $('.dateCalendar').datepicker({ dateFormat: 'dd-mm-yy' })
+    $('.dateCalendar').datepicker({
+        dateFormat: 'dd-mm-yy',
+        minDate: 0
+    })
 
     function fixDiv() {
         var $cache = $('#navbar-example');
@@ -18,7 +21,7 @@ jQuery(function ($) {
             $cache.css({'position': 'fixed', 'top': '40px'});
             $cache.css({'width': '96.3%'});
         }
-        else{
+        else {
             $cache.css({'position': 'relative', 'top': 'auto'});
             $cache.css({'width': '100%'});
         }
