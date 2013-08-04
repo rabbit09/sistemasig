@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h1>Lista noticias</h1>
+
+    {# when a new is deleted #}
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <div>
+        {% for newItem in news %}
+            <div>
+                <h3>{{ newItem.title }}</h3>
+                <span>{{ newItem.publishedDate|date('Y-m-d') }}</span>
+
+                <p>{{ newItem.summary }}</p>
+
+                <p><a href="{{ path('sistema_sig_news_delete', {'newId':newItem.id}) }}">
+                        Eliminar
+                    </a></p>
+            </div>
+            <hr/>
+        {% endfor %}
+    </div>
+{% endblock %}

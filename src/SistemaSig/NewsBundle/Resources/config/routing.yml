@@ -7,3 +7,21 @@ sistema_sig_news_create:
     defaults: { _controller: SistemaSigNewsBundle:News:create }
     requirements:
             _method:  GET|POST
+
+sistema_sig_news_edit:
+    pattern:  /editar/{newId}
+    defaults: { _controller: SistemaSigNewsBundle:News:edit }
+    requirements:
+            _method:  GET|POST
+
+sistema_sig_news_delete:
+    pattern:  /eliminar/{newId}
+    defaults: { _controller: SistemaSigNewsBundle:News:delete }
+    requirements:
+            _method:  GET|POST
+
+sistema_sig_news_admin:
+    pattern:  /admin
+    defaults: { _controller: SistemaSigNewsBundle:News:admin }
+    requirements:
+            _method:  GET

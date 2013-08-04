@@ -1,14 +1,66 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-<h1>Lista noticiass</h1>
-    <div>
-        {% for newItem in news %}
-            <div>
-                <h3>{{ newItem.title }}</h3>
-                <span>{{ newItem.publishedDate|date('Y-m-d') }}</span>
-                <p>{{ newItem.summary }}</p>
+    <!-- Menu fixed for visitants -->
+    {# menu bar for visitors #}
+    {{ include("menu_bar_visitor.html.twig") }}
+
+
+    <div class="row-fluid">
+        {# sidebar #}
+        {{ include("admin_sidebar.html.twig") }}
+
+        <!--/span-->
+        <div class="span9">
+            {# recent new #}
+            <div class="hero-unit">
+                <div class="row">
+                    <div class="span7">
+                        <h2>Noticia reciente</h2>
+
+                        <p>
+                            <i class="icon-calendar"></i>
+                            <small>Publicado en 21/12/13</small>
+                        </p>
+
+                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo,
+                            tortor
+                            mauris condimentum nibh, ut...
+                            <a class="btn btn-primary btn-medium" href="#">Ver noticia</a></p>
+
+
+                    </div>
+                    <div class="span5"><img src="../images/dos.jpg"></div>
+                </div>
+
             </div>
-        {% endfor %}
+
+            {# list of news #}
+            {% for newItem in news %}
+                <div class="span5">
+                    <h3>{{ newItem.title }}</h3>
+
+                    <p>
+                        <i class="icon-calendar"></i>
+                        <small>Publicado en {{ newItem.publishedDate|date('Y-m-d') }}</small>
+                        {{ newItem.summary }}
+                    </p>
+
+                    <p><a href="#" class="btn">Leer noticia</a></p>
+                </div>
+            {% endfor %}
+
+            <div class="row-fluid">
+                <div class="span12">
+                    <br/><br/>
+
+                    <div class="alert alert-info">
+                        <button data-dismiss="alert" class="close" type="button">x</button>
+                        No hay mas noticias...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
     </div>
 {% endblock %}

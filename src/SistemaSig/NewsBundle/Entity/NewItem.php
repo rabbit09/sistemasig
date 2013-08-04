@@ -103,6 +103,23 @@ class NewItem
     }
 
     /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+    /**
      * @param mixed $publishedDate
      */
     public function setPublishedDate($publishedDate)

@@ -1,0 +1,85 @@
+html {
+    background: transparent;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    background-color: white;
+}
+
+.sidebar-nav {
+    padding: 9px 0;
+}
+
+@media (max-width: 980px) {
+    /* Enable use of floated navbar text */
+    .navbar-text.pull-right {
+        float: none;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+/* banner news */
+.news-banner {
+    background: black;
+    color: #fff;
+    margin: -5px 0 40px 0;
+    padding: 0px;
+    height: 250px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-image: url("../images/banner.jpg");
+    background-position: center center;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    font-size: 72px;
+    line-height: 1;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+/* Form for sing in */
+.form-signin {
+    max-width: 300px;
+    padding: 19px 29px 29px;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 7px 9px;
+}
+
+/* align vertiycally */
+.align-vertically {
+    margin-bottom: -10px;
+}
