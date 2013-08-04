@@ -1,3 +1,9 @@
 sistema_sig_news_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: SistemaSigNewsBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: SistemaSigNewsBundle:News:index }
+
+sistema_sig_news_create:
+    pattern:  /crear
+    defaults: { _controller: SistemaSigNewsBundle:News:create }
+    requirements:
+            _method:  GET|POST

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2475914951">
+    <data-source source="LOCAL" name="Centos" product="MySQL" version="5.5.32" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.22 ( Revision: ${bzr.revision-id} )" uuid="8daeefde-57e6-4705-9509-1a6bd169775a">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://centos/symfony</jdbc-url>
+      <user-name>noob</user-name>
+      <user-password>dfc4dfc5dfc5dfc8</user-password>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/tmp/mysql-connector-java-5.1.22-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+

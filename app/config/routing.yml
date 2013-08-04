@@ -1,4 +1,4 @@
 sistema_sig_news:
     resource: "@SistemaSigNewsBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /noticias
 
