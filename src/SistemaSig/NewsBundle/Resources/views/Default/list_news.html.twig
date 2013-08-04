@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<h1>Lista noticiass</h1>
+    <div>
+        {% for newItem in news %}
+            <div>
+                <h3>{{ newItem.title }}</h3>
+                <span>{{ newItem.publishedDate|date('Y-m-d') }}</span>
+                <p>{{ newItem.summary }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

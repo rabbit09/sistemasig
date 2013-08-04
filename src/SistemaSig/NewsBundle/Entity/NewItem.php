@@ -97,6 +97,11 @@ class NewItem
         $metadata->addPropertyConstraint('body', new NotBlank());
     }
 
+    public static function getEntityName()
+    {
+        return get_called_class();
+    }
+
     /**
      * @param mixed $publishedDate
      */

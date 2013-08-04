@@ -22,8 +22,9 @@ class NewsController extends Controller
      */
     public function indexAction()
     {
-        $repository = $this->getDoctrine()->getRepository('SistemaSigBundle:NewItem');
+        $repository = $this->getDoctrine()->getRepository(NewItem::getEntityName());
         $news = $repository->findBy(
+            array('status' => 1),
             array('id' => 'DESC')
         );
 
