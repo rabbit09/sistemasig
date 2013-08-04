@@ -1,15 +1,25 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-    <h1>Crear noticia</h1>
+    {# menu bar for visitors #}
+    {{ include("menu_bar_visitor.html.twig") }}
 
-    {% for flashMessage in app.session.flashbag.get('notice') %}
-        <div class="flash-notice">
-            {{ flashMessage }}
+    <div class="row-fluid">
+        {# sidebar #}
+        {{ include("admin_sidebar.html.twig") }}
+
+        <div class="span9">
+            <h3>Crear noticia</h3>
+
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div class="flash-notice">
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+
+            {{ form(form) }}
         </div>
-    {% endfor %}
+    </div>
 
-
-    {{ form(form) }}
 {% endblock %}
 

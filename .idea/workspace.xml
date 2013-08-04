@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/admin.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/admin_sidebar.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/menu_bar_visitor.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Entity/NewItem.php" afterPath="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Entity/NewItem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Form/CreateEditNew.php" afterPath="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Form/CreateEditNew.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Controller/NewsController.php" afterPath="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Controller/NewsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/list_news.html.twig" afterPath="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/list_news.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/media/main.js" afterPath="$PROJECT_DIR$/web/media/main.js" />
     </list>
     <ignored path="sistemasig.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,19 +23,20 @@
     <file path="/routing.yml" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375583319207" ignored="false" />
     <file path="/index.html.twig" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375566488173" ignored="false" />
     <file path="/NewsController.php" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375584211141" ignored="false" />
-    <file path="/create_article.html.twig" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375578794174" ignored="false" />
+    <file path="/create_article.html.twig" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375596108876" ignored="false" />
     <file path="/New.php" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375568846929" ignored="false" />
     <file path="/NewItem.php" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375578037130" ignored="false" />
-    <file path="/CreateEditNew.php" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375578065857" ignored="false" />
+    <file path="/CreateEditNew.php" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375597018165" ignored="false" />
     <file path="/Centos" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375578446234" ignored="false" />
     <file path="/list_articles.twig.html" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375578807459" ignored="false" />
     <file path="/list_news.html.twig" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375595838861" ignored="false" />
     <file path="/admin.html.twig" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375584110113" ignored="false" />
     <file path="/script.js" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375592391429" ignored="false" />
-    <file path="/base.html.twig" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375593939995" ignored="false" />
-    <file path="/main.js" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375592711234" ignored="false" />
+    <file path="/base.html.twig" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375597557366" ignored="false" />
+    <file path="/main.js" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375597058402" ignored="false" />
     <file path="/noticias_lista_visitor.html" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375595566554" ignored="false" />
     <file path="/dummy.xml" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375595567940" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="568c9d6d-02f2-4c5c-a9db-53b7e9380ea9" time="1375597557774" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,22 +60,13 @@
     <favorites_list name="sistemasig" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5846485">
+    <splitter split-orientation="horizontal" split-proportion="0.35068494">
       <split-first>
         <leaf>
-          <file leaf-file-name="routing.yml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/config/routing.yml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="23" selection-start="432" selection-end="455" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="NewsController.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="NewsController.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Controller/NewsController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="24" column="67" selection-start="616" selection-end="616" vertical-scroll-proportion="0.31836733">
+                <state line="23" column="10" selection-start="539" selection-end="642" vertical-scroll-proportion="-9.454545">
                   <folding>
                     <element signature="e#207#248#0" expanded="true" />
                   </folding>
@@ -87,19 +74,22 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="admin.html.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/admin.html.twig">
+          <file leaf-file-name="CreateEditNew.php" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Form/CreateEditNew.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="29" selection-start="109" selection-end="109" vertical-scroll-proportion="-2.9545455">
-                  <folding />
+                <state line="63" column="28" selection-start="1626" selection-end="1626" vertical-scroll-proportion="0.33795014">
+                  <folding>
+                    <element signature="e#6#160#0" expanded="true" />
+                    <element signature="e#201#242#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/index.html.twig">
+          <file leaf-file-name="FormBuilderInterface.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Form/FormBuilderInterface.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="-2.9545455">
+                <state line="31" column="56" selection-start="992" selection-end="992" vertical-scroll-proportion="-12.090909">
                   <folding />
                 </state>
               </provider>
@@ -108,44 +98,10 @@
           <file leaf-file-name="list_news.html.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/list_news.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="47" selection-start="168" selection-end="168" vertical-scroll-proportion="-2.9545455">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="menu_bar_visitor.html.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/Resources/views/menu_bar_visitor.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="48" selection-start="1012" selection-end="1012" vertical-scroll-proportion="-8.863636">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="admin_sidebar.html.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/Resources/views/admin_sidebar.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="41" column="6" selection-start="1808" selection-end="1808" vertical-scroll-proportion="-24.227272">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="create_article.html.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Forms/create_article.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="48" selection-start="127" selection-end="127" vertical-scroll-proportion="-2.9545455">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Centos" pinned="false" current="false" current-in-tab="false">
-            <entry file="dbDummy://db-console:/105e60e4/8daeefde-57e6-4705-9509-1a6bd169775a/">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="19" selection-start="0" selection-end="18" vertical-scroll-proportion="-0.0">
-                  <folding />
+                <state line="12" column="8" selection-start="262" selection-end="281" vertical-scroll-proportion="-7.090909">
+                  <folding>
+                    <element signature="tag#div#0;tag#div#0;tag#div#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -154,10 +110,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="base.html.twig" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="base.html.twig" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="23" column="34" selection-start="865" selection-end="865" vertical-scroll-proportion="-13.590909">
+                <state line="13" column="53" selection-start="651" selection-end="651" vertical-scroll-proportion="0.22120419">
                   <folding />
                 </state>
               </provider>
@@ -166,20 +122,28 @@
           <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/media/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="21" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
+                <state line="16" column="42" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="NewItem.php" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="NewItem.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Entity/NewItem.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="20" selection-start="172" selection-end="182" vertical-scroll-proportion="0.15314136">
+                <state line="12" column="25" selection-start="283" selection-end="283" vertical-scroll-proportion="-7.090909">
                   <folding>
                     <element signature="e#6#160#0" expanded="true" />
-                    <element signature="e#203#257#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="create_article.html.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Forms/create_article.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="13" column="42" selection-start="338" selection-end="338" vertical-scroll-proportion="-7.681818">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -205,21 +169,21 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Form/Form.php" />
-        <option value="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Form/CreateEditNew.php" />
         <option value="db-console:/105e60e4/8daeefde-57e6-4705-9509-1a6bd169775a/" />
-        <option value="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Forms/create_article.html.twig" />
         <option value="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/list_articles.twig.html" />
         <option value="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Entity/NewItem.php" />
         <option value="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/admin.html.twig" />
-        <option value="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Controller/NewsController.php" />
         <option value="$PROJECT_DIR$/web/script.js" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/web/media/main.js" />
         <option value="$PROJECT_DIR$/web/templates/noticias_lista_visitor.html" />
         <option value="$PROJECT_DIR$/app/Resources/views/menu_bar_visitor.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin_sidebar.html.twig" />
         <option value="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/list_news.html.twig" />
+        <option value="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Forms/create_article.html.twig" />
+        <option value="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Controller/NewsController.php" />
+        <option value="$PROJECT_DIR$/web/media/main.js" />
+        <option value="$PROJECT_DIR$/src/SistemaSig/NewsBundle/Form/CreateEditNew.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       </list>
     </option>
   </component>
@@ -320,6 +284,84 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="media" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sistemasig" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sistemasig" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="media" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jquery-ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sistemasig" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sistemasig" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="media" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jquery-ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sistemasig" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sistemasig" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="media" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jquery-ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="redmond" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -450,6 +492,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sistemasig" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sistemasig" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SistemaSig" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewsBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Form" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -664,7 +732,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969698" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.6" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32998565" sideWeight="0.6" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -672,7 +740,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21449067" sideWeight="0.80121213" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21449067" sideWeight="0.80121213" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -766,33 +834,9 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Form/CreateEditNew.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="13" selection-start="1727" selection-end="1727" vertical-scroll-proportion="0.962963">
-          <folding>
-            <element signature="e#6#160#0" expanded="true" />
-            <element signature="e#201#242#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="23" selection-start="432" selection-end="455" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://db-console:/105e60e4/8daeefde-57e6-4705-9509-1a6bd169775a/">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="19" selection-start="0" selection-end="18" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="-2.9545455">
           <folding />
         </state>
       </provider>
@@ -809,65 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="34" selection-start="865" selection-end="865" vertical-scroll-proportion="-13.590909">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/media/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="21" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/admin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="29" selection-start="109" selection-end="109" vertical-scroll-proportion="-2.9545455">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin_sidebar.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="6" selection-start="1808" selection-end="1808" vertical-scroll-proportion="-24.227272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Forms/create_article.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="48" selection-start="127" selection-end="127" vertical-scroll-proportion="-2.9545455">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Entity/NewItem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="20" selection-start="172" selection-end="182" vertical-scroll-proportion="0.15314136">
-          <folding>
-            <element signature="e#6#160#0" expanded="true" />
-            <element signature="e#203#257#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/list_news.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="47" selection-start="168" selection-end="168" vertical-scroll-proportion="-2.9545455">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/menu_bar_visitor.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="48" selection-start="1012" selection-end="1012" vertical-scroll-proportion="-8.863636">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/templates/noticias_lista_visitor.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="137" column="0" selection-start="6204" selection-end="8698" vertical-scroll-proportion="0.510699">
@@ -879,11 +864,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin_sidebar.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="6" selection-start="1808" selection-end="1808" vertical-scroll-proportion="0.7251701">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/menu_bar_visitor.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="48" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.2579365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Entity/NewItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="25" selection-start="283" selection-end="283" vertical-scroll-proportion="-7.090909">
+          <folding>
+            <element signature="e#6#160#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="0.08365508">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="9" selection-start="285" selection-end="285" vertical-scroll-proportion="0.2007722">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Default/list_news.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="8" selection-start="262" selection-end="281" vertical-scroll-proportion="-7.090909">
+          <folding>
+            <element signature="tag#div#0;tag#div#0;tag#div#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Form/FormBuilderInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="56" selection-start="992" selection-end="992" vertical-scroll-proportion="-12.090909">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Controller/NewsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="67" selection-start="616" selection-end="616" vertical-scroll-proportion="0.31836733">
+        <state line="23" column="10" selection-start="539" selection-end="642" vertical-scroll-proportion="-9.454545">
           <folding>
             <element signature="e#207#248#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Resources/views/Forms/create_article.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="42" selection-start="338" selection-end="338" vertical-scroll-proportion="-7.681818">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/media/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="42" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="53" selection-start="651" selection-end="651" vertical-scroll-proportion="0.22120419">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SistemaSig/NewsBundle/Form/CreateEditNew.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="28" selection-start="1626" selection-end="1626" vertical-scroll-proportion="0.33795014">
+          <folding>
+            <element signature="e#6#160#0" expanded="true" />
+            <element signature="e#201#242#0" expanded="true" />
           </folding>
         </state>
       </provider>

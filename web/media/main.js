@@ -8,6 +8,10 @@ $(function () {
 });
 
 jQuery(function ($) {
+
+    // Calendar Jquery UI
+    $('.dateCalendar').datepicker({ dateFormat: 'dd-mm-yy' })
+
     function fixDiv() {
         var $cache = $('#navbar-example');
         if ($(window).scrollTop() > 590) {

@@ -23,9 +23,33 @@ class CreateEditNew extends AbstractType
     {
         $NewItem = new NewItem();
 
-        $builder->add('title');
-        $builder->add('body', 'textarea');
-        $builder->add('summary', 'textarea');
+        $builder->add(
+            'title',
+            'text',
+            array(
+                'label' => 'Título',
+                'required' => true
+            )
+        );
+
+        $builder->add(
+            'summary',
+            'textarea',
+            array(
+                'label' => 'Resumen',
+                'required' => false
+            )
+        );
+
+        $builder->add(
+            'body',
+            'textarea',
+            array(
+                'label' => 'Contenido',
+                'required' => true
+            )
+        );
+
         $builder->add(
             'city',
             'choice',
@@ -41,10 +65,22 @@ class CreateEditNew extends AbstractType
                     $NewItem::TARIJA => 'Tarija',
                     $NewItem::POTOSI => 'Potosi',
                 ),
+                'label' => 'Ciudad',
                 'required' => true,
             )
         );
-        $builder->add('publishedDate');
+
+        $builder->add(
+            'publishedDate',
+            'date',
+            array(
+                'widget' => 'single_text',
+                'format' => 'dd-MM-yyyy',
+                'attr' => array('class' => 'dateCalendar'),
+                'label' => 'Fecha de publicación',
+            )
+        );
+
         $builder->add(
             'status',
             'choice',
@@ -53,10 +89,19 @@ class CreateEditNew extends AbstractType
                     $NewItem::PUBLISHED => 'Publicado',
                     $NewItem::DRAFT => 'Borrador',
                 ),
+                'label' => 'Estado',
                 'required' => true,
             )
         );
-        $builder->add('Crear', 'submit');
+
+        $builder->add(
+            'Crear',
+            'submit',
+            array(
+                'label' => 'Crear noticia',
+                'attr' => array('class' => 'btn btn-medium btn-primary')
+            )
+        );
 
     }
 

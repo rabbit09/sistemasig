@@ -21,9 +21,9 @@ class NewsController extends Controller
      */
     public function indexAction()
     {
-        if(1==2){
+        /*if(1==2){
             throw $this->createNotFoundException('The product does not exist');
-        }
+        }*/
 
         $repository = $this->getDoctrine()->getRepository(NewItem::getEntityName());
         $news = $repository->findBy(
