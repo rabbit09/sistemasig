@@ -83,3 +83,8 @@ body {
 .align-vertically {
     margin-bottom: -10px;
 }
+
+/* burron width */
+.btn-width-medium{
+    width: 90px;
+}

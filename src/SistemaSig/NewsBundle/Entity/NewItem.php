@@ -54,7 +54,7 @@ class NewItem
     protected $body;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $summary;
 
@@ -93,8 +93,12 @@ class NewItem
 
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
-        $metadata->addPropertyConstraint('title', new NotBlank());
-        $metadata->addPropertyConstraint('body', new NotBlank());
+        $metadata->addPropertyConstraint('title', new NotBlank(array(
+                'message' => 'El titulo no puede estar vacio'
+            )));
+        $metadata->addPropertyConstraint('body', new NotBlank(array(
+                'message' => 'El contenido no puede estar vacio'
+            )));
     }
 
     public static function getEntityName()

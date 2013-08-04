@@ -57,21 +57,20 @@ class NewsController extends Controller
                 $em->flush();
 
                 $this->get('session')->getFlashBag()->add(
-                    'notice',
-                    'Your changes were saved! '
+                    'success',
+                    'La noticia fue creada'
                 );
 
                 // Redirect to
-                /*return $this->redirect(
+                return $this->redirect(
                     $this->generateUrl(
-                        'sistema_sig_news_homepage',
-                        array('name' => 'nombre')
+                        'sistema_sig_news_admin'
                     )
-                );*/
+                );
             } else {
                 $this->get('session')->getFlashBag()->add(
-                    'notice',
-                    'No va a dar!'
+                    'error',
+                    'No se pudo crear la noticia'
                 );
             }
         }
@@ -105,12 +104,12 @@ class NewsController extends Controller
                 $em->flush();
 
                 $this->get('session')->getFlashBag()->add(
-                    'notice',
+                    'success',
                     'La noticia fué actualizada'
                 );
             } else {
                 $this->get('session')->getFlashBag()->add(
-                    'notice',
+                    'error',
                     'No va a dar!'
                 );
             }
@@ -140,7 +139,7 @@ class NewsController extends Controller
         $em->flush();
 
         $this->get('session')->getFlashBag()->add(
-            'notice',
+            'success',
             'La noticia fue eliminada!'
         );
 

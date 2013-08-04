@@ -15,11 +15,15 @@ jQuery(function ($) {
         minDate: 0
     })
 
+    // Apply style to dropdowns
+    //dropDownUi
+    //$('.dropDownUi').selectmemu();
+
     function fixDiv() {
         var $cache = $('#navbar-example');
-        if ($(window).scrollTop() > 590) {
+        if ($(window).scrollTop() > 20) {
             $cache.css({'position': 'fixed', 'top': '40px'});
-            $cache.css({'width': '96.3%'});
+            $cache.css({'width': '96.6%'});
         }
         else {
             $cache.css({'position': 'relative', 'top': 'auto'});

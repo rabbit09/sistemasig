@@ -1,28 +1,81 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-    <h1>Lista noticias</h1>
+    {# menu bar for visitors #}
+    {{ include("menu_bar_visitor.html.twig") }}
 
-    {# when a new is deleted #}
-    {% for flashMessage in app.session.flashbag.get('notice') %}
-        <div class="flash-notice">
-            {{ flashMessage }}
+    <div class="row-fluid">
+        {# sidebar #}
+        {{ include("admin_sidebar.html.twig") }}
+
+        <div class="span9">
+            <h3>Lista noticias</h3>
+
+            {# messages #}
+            {% for flashMessage in app.session.flashbag.get('success') %}
+                <div class="alert alert-success">
+                    <button data-dismiss="alert" class="close" type="button">x</button>
+                    <strong>Hecho</strong>
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+            {% for flashMessage in app.session.flashbag.get('info') %}
+                <div class="alert alert-info">
+                    <button data-dismiss="alert" class="close" type="button">x</button>
+                    <strong>Información: </strong>
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+            {% for flashMessage in app.session.flashbag.get('error') %}
+                <div class="alert alert-error">
+                    <button data-dismiss="alert" class="close" type="button">x</button>
+                    <strong>Error</strong>
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+
+
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Título</th>
+                    <th>Creación</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for newItem in news %}
+                    <tr>
+                        <td>{{ newItem.status == 1 ? '<i class="icon-ok"></i>':'<i class="icon-edit"></i>' }}</td>
+                        <td>{{ newItem.title|length > 15 ? newItem.title|slice(0, 50) ~ '...' : newItem.title }}</td>
+                        <td>{{ newItem.publishedDate|date('Y-m-d') }}</td>
+                        <td>
+                            <p class="btn-group">
+                                <a class="  btn btn-small"
+                                   href="{{ path('sistema_sig_news_edit', {'newId':newItem.id}) }}">
+                                    <i class="icon-eye-open"></i>
+                                    Ver
+                                </a>
+                                <a class="  btn btn-small"
+                                   href="{{ path('sistema_sig_news_edit', {'newId':newItem.id}) }}">
+                                    <i class="icon-pencil"></i>
+                                    Editar
+                                </a>
+                                <a class="  btn btn-danger btn-small"
+                                   href="{{ path('sistema_sig_news_delete', {'newId':newItem.id}) }}">
+                                    <i class="icon-trash icon-white"></i>
+                                    Borrar
+                                </a>
+                            </p>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
         </div>
-    {% endfor %}
-
-    <div>
-        {% for newItem in news %}
-            <div>
-                <h3>{{ newItem.title }}</h3>
-                <span>{{ newItem.publishedDate|date('Y-m-d') }}</span>
-
-                <p>{{ newItem.summary }}</p>
-
-                <p><a href="{{ path('sistema_sig_news_delete', {'newId':newItem.id}) }}">
-                        Eliminar
-                    </a></p>
-            </div>
-            <hr/>
-        {% endfor %}
     </div>
+
 {% endblock %}

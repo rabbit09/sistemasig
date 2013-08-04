@@ -28,16 +28,51 @@ class CreateEditNew extends AbstractType
             'text',
             array(
                 'label' => 'Título',
-                'required' => true
+                'required' => true,
+                'attr' => array('class' => 'input-block-level')
             )
         );
 
         $builder->add(
             'body',
-            'textarea',
+            'ckeditor',
             array(
-                'label' => 'Contenido',
-                'required' => true
+                'config' => array(
+                    'toolbar' => array(
+                        array(
+                            'name' => 'document',
+                            'items' => array(
+                                'Source',
+                                '-',
+                                'Save',
+                                'NewPage',
+                                'DocProps',
+                                'Preview',
+                                'Print',
+                                '-',
+                                'Templates'
+                            ),
+                        ),
+                        '/',
+                        array(
+                            'name' => 'basicstyles',
+                            'items' => array(
+                                'Bold',
+                                'Italic',
+                                'Underline',
+                                'Strike',
+                                'Subscript',
+                                'Superscript',
+                                '-',
+                                'RemoveFormat',
+                                '-',
+                                'Image'
+                            ),
+                        ),
+                    ),
+                    'language' => 'es',
+                    'filebrowserUploadUrl' => '/media/'
+                ),
             )
         );
 
@@ -46,7 +81,8 @@ class CreateEditNew extends AbstractType
             'textarea',
             array(
                 'label' => 'Resumen',
-                'required' => false
+                'required' => false,
+                'attr' => array('class' => 'input-block-level')
             )
         );
 
@@ -66,7 +102,7 @@ class CreateEditNew extends AbstractType
                     $NewItem::POTOSI => 'Potosi',
                 ),
                 'label' => 'Ciudad',
-                'required' => true,
+                'required' => true
             )
         );
 
@@ -95,7 +131,7 @@ class CreateEditNew extends AbstractType
         );
 
         $builder->add(
-            'Crear',
+            'create',
             'submit',
             array(
                 'label' => 'Crear noticia',
