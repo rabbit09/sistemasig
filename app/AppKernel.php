@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new SistemaSig\NewsBundle\SistemaSigNewsBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             //new PunkAve\FileUploaderBundle\PunkAveFileUploaderBundle(),
+            new SistemaSig\PortalWebBundle\SistemaSigPortalWebBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

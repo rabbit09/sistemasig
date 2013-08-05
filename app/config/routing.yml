@@ -1,3 +1,7 @@
+sistema_sig_portal_web:
+    resource: "@SistemaSigPortalWebBundle/Resources/config/routing.yml"
+    prefix:   /
+
 sistema_sig_news:
     resource: "@SistemaSigNewsBundle/Resources/config/routing.yml"
     prefix:   /noticias
