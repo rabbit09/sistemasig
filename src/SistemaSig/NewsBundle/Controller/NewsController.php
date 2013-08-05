@@ -21,20 +21,26 @@ class NewsController extends Controller
      */
     public function indexAction()
     {
-        /*if(1==2){
-            throw $this->createNotFoundException('The product does not exist');
-        }*/
-
         $repository = $this->getDoctrine()->getRepository(NewItem::getEntityName());
+
         $news = $repository->findBy(
             array('status' => 1),
-            array('id' => 'DESC')
+            array('id' => 'DESC'),
+            100,
+            1
+        );
+        $recentNew = $repository->findBy(
+            array('status' => 1),
+            array('id' => 'DESC'),
+            1,
+            0
         );
 
         return $this->render(
             'SistemaSigNewsBundle:Default:list_news.html.twig',
             array(
-                'news' => $news
+                'news' => $news,
+                'recentNews' => $recentNew
             )
         );
     }
@@ -146,6 +152,20 @@ class NewsController extends Controller
         return $this->redirect(
             $this->generateUrl(
                 'sistema_sig_news_admin'
+            )
+        );
+    }
+
+    public function viewAction($newId)
+    {
+        // Getting the new
+        $em = $this->getDoctrine()->getManager();
+        $NewItem = $em->getRepository(NewItem::getEntityName())->find($newId);
+
+        return $this->render(
+            'SistemaSigNewsBundle:Default:new_detail_view.html.twig',
+            array(
+                'new' => $NewItem
             )
         );
     }

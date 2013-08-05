@@ -20,6 +20,12 @@ sistema_sig_news_delete:
     requirements:
             _method:  GET|POST
 
+sistema_sig_news_view:
+    pattern:  /ver/{newId}
+    defaults: { _controller: SistemaSigNewsBundle:News:view }
+    requirements:
+            _method:  GET|POST
+
 sistema_sig_news_admin:
     pattern:  /admin
     defaults: { _controller: SistemaSigNewsBundle:News:admin }

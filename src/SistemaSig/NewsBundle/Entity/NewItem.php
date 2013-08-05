@@ -49,7 +49,7 @@ class NewItem
     protected $title;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      */
     protected $body;
 

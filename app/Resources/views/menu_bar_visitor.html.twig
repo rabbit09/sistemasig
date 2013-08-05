@@ -1,35 +1,16 @@
 <div class="navbar navbar-static" id="navbar-example">
     <div class="navbar-inner">
         <div style="width: auto;" class="container">
-            <a href="#" class="brand">Portada de noticias</a>
+
+            {% block module_home_link %}
+            {% endblock %}
+
+            {# list of dropdowns quick access #}
             <ul role="navigation" class="nav">
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" role="button" href="#" id="drop1">Menu <b
-                                class="caret"></b></a>
-                    <ul aria-labelledby="drop1" role="menu" class="dropdown-menu">
-                        <li role="presentation"><a href="http://google.com" tabindex="-1" role="menuitem">Menu 1</a>
-                        </li>
-                        <li role="presentation"><a href="#anotherAction" tabindex="-1" role="menuitem">Otro menu</a>
-                        </li>
-                        <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Otro menu</a>
-                        </li>
-                        <li class="divider" role="presentation"></li>
-                        <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Menu externo</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" role="button" id="drop2" href="#">Menu 2
-                        <b class="caret"></b></a>
-                    <ul aria-labelledby="drop2" role="menu" class="dropdown-menu">
-                        <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Menu 2</a></li>
-                        <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Otro menu</a></li>
-                        <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Otro menu</a>
-                        </li>
-                        <li class="divider" role="presentation"></li>
-                        <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Menu externo</a></li>
-                    </ul>
-                </li>
+                {# custom menus by module #}
+                {% block dropdown_items %}{% endblock %}
             </ul>
+
             <ul class="nav pull-right">
                 <li id="fat-menu">
                     <form class="align-vertically form-search">

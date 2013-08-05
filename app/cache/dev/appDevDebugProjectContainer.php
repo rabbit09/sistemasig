@@ -41,6 +41,8 @@ class appDevDebugProjectContainer extends Container
             'assetic.cache' => 'getAssetic_CacheService',
             'assetic.controller' => 'getAssetic_ControllerService',
             'assetic.filter.cssrewrite' => 'getAssetic_Filter_CssrewriteService',
+            'assetic.filter.yui_css' => 'getAssetic_Filter_YuiCssService',
+            'assetic.filter.yui_js' => 'getAssetic_Filter_YuiJsService',
             'assetic.filter_manager' => 'getAssetic_FilterManagerService',
             'assetic.request_listener' => 'getAssetic_RequestListenerService',
             'assetic.value_supplier.default' => 'getAssetic_ValueSupplier_DefaultService',
@@ -113,6 +115,10 @@ class appDevDebugProjectContainer extends Container
             'fragment.renderer.hinclude' => 'getFragment_Renderer_HincludeService',
             'fragment.renderer.inline' => 'getFragment_Renderer_InlineService',
             'http_kernel' => 'getHttpKernelService',
+            'ivory_ck_editor.config_manager' => 'getIvoryCkEditor_ConfigManagerService',
+            'ivory_ck_editor.form.type' => 'getIvoryCkEditor_Form_TypeService',
+            'ivory_ck_editor.helper.assets_version_trimer' => 'getIvoryCkEditor_Helper_AssetsVersionTrimerService',
+            'ivory_ck_editor.plugin_manager' => 'getIvoryCkEditor_PluginManagerService',
             'kernel' => 'getKernelService',
             'locale_listener' => 'getLocaleListenerService',
             'logger' => 'getLoggerService',
@@ -278,9 +284,12 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAssetic_AssetManagerService()
     {
+        $a = $this->get('templating.loader');
+
         $this->services['assetic.asset_manager'] = $instance = new \Assetic\Factory\LazyAssetManager($this->get('assetic.asset_factory'), array('twig' => new \Assetic\Factory\Loader\CachedFormulaLoader(new \Assetic\Extension\Twig\TwigFormulaLoader($this->get('twig')), new \Assetic\Cache\ConfigCache('/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/cache/dev/assetic/config'), true)));
 
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($this->get('templating.loader'), '', '/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/Resources/views', '/\\.[^.]+\\.twig$/'), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SistemaSigNewsBundle', '/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/Resources/SistemaSigNewsBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SistemaSigNewsBundle', '/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/src/SistemaSig/NewsBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, '', '/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/Resources/views', '/\\.[^.]+\\.twig$/'), 'twig');
 
         return $instance;
     }
@@ -315,6 +324,47 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'assetic.filter.yui_css' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Assetic\Filter\Yui\CssCompressorFilter A Assetic\Filter\Yui\CssCompressorFilter instance.
+     */
+    protected function getAssetic_Filter_YuiCssService()
+    {
+        $this->services['assetic.filter.yui_css'] = $instance = new \Assetic\Filter\Yui\CssCompressorFilter('/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/Resources/java/yuicompressor-2.4.7.jar', '/usr/bin/java');
+
+        $instance->setCharset('UTF-8');
+        $instance->setTimeout(NULL);
+        $instance->setStackSize(NULL);
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'assetic.filter.yui_js' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Assetic\Filter\Yui\JsCompressorFilter A Assetic\Filter\Yui\JsCompressorFilter instance.
+     */
+    protected function getAssetic_Filter_YuiJsService()
+    {
+        $this->services['assetic.filter.yui_js'] = $instance = new \Assetic\Filter\Yui\JsCompressorFilter('/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/Resources/java/yuicompressor-2.4.7.jar', '/usr/bin/java');
+
+        $instance->setCharset('UTF-8');
+        $instance->setTimeout(NULL);
+        $instance->setStackSize(NULL);
+        $instance->setNomunge(NULL);
+        $instance->setPreserveSemi(NULL);
+        $instance->setDisableOptimizations(NULL);
+
+        return $instance;
+    }
+
+    /**
      * Gets the 'assetic.filter_manager' service.
      *
      * This service is shared.
@@ -324,7 +374,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAssetic_FilterManagerService()
     {
-        return $this->services['assetic.filter_manager'] = new \Symfony\Bundle\AsseticBundle\FilterManager($this, array('cssrewrite' => 'assetic.filter.cssrewrite'));
+        return $this->services['assetic.filter_manager'] = new \Symfony\Bundle\AsseticBundle\FilterManager($this, array('cssrewrite' => 'assetic.filter.cssrewrite', 'yui_css' => 'assetic.filter.yui_css', 'yui_js' => 'assetic.filter.yui_js'));
     }
 
     /**
@@ -712,7 +762,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getForm_RegistryService()
     {
-        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension($this, array('form' => 'form.type.form', 'birthday' => 'form.type.birthday', 'checkbox' => 'form.type.checkbox', 'choice' => 'form.type.choice', 'collection' => 'form.type.collection', 'country' => 'form.type.country', 'date' => 'form.type.date', 'datetime' => 'form.type.datetime', 'email' => 'form.type.email', 'file' => 'form.type.file', 'hidden' => 'form.type.hidden', 'integer' => 'form.type.integer', 'language' => 'form.type.language', 'locale' => 'form.type.locale', 'money' => 'form.type.money', 'number' => 'form.type.number', 'password' => 'form.type.password', 'percent' => 'form.type.percent', 'radio' => 'form.type.radio', 'repeated' => 'form.type.repeated', 'search' => 'form.type.search', 'textarea' => 'form.type.textarea', 'text' => 'form.type.text', 'time' => 'form.type.time', 'timezone' => 'form.type.timezone', 'url' => 'form.type.url', 'button' => 'form.type.button', 'submit' => 'form.type.submit', 'reset' => 'form.type.reset', 'currency' => 'form.type.currency', 'entity' => 'form.type.entity'), array('form' => array(0 => 'form.type_extension.form.http_foundation', 1 => 'form.type_extension.form.validator', 2 => 'form.type_extension.csrf'), 'repeated' => array(0 => 'form.type_extension.repeated.validator'), 'submit' => array(0 => 'form.type_extension.submit.validator')), array(0 => 'form.type_guesser.validator', 1 => 'form.type_guesser.doctrine'))), $this->get('form.resolved_type_factory'));
+        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension($this, array('form' => 'form.type.form', 'birthday' => 'form.type.birthday', 'checkbox' => 'form.type.checkbox', 'choice' => 'form.type.choice', 'collection' => 'form.type.collection', 'country' => 'form.type.country', 'date' => 'form.type.date', 'datetime' => 'form.type.datetime', 'email' => 'form.type.email', 'file' => 'form.type.file', 'hidden' => 'form.type.hidden', 'integer' => 'form.type.integer', 'language' => 'form.type.language', 'locale' => 'form.type.locale', 'money' => 'form.type.money', 'number' => 'form.type.number', 'password' => 'form.type.password', 'percent' => 'form.type.percent', 'radio' => 'form.type.radio', 'repeated' => 'form.type.repeated', 'search' => 'form.type.search', 'textarea' => 'form.type.textarea', 'text' => 'form.type.text', 'time' => 'form.type.time', 'timezone' => 'form.type.timezone', 'url' => 'form.type.url', 'button' => 'form.type.button', 'submit' => 'form.type.submit', 'reset' => 'form.type.reset', 'currency' => 'form.type.currency', 'entity' => 'form.type.entity', 'ckeditor' => 'ivory_ck_editor.form.type'), array('form' => array(0 => 'form.type_extension.form.http_foundation', 1 => 'form.type_extension.form.validator', 2 => 'form.type_extension.csrf'), 'repeated' => array(0 => 'form.type_extension.repeated.validator'), 'submit' => array(0 => 'form.type_extension.submit.validator')), array(0 => 'form.type_guesser.validator', 1 => 'form.type_guesser.doctrine'))), $this->get('form.resolved_type_factory'));
     }
 
     /**
@@ -1299,6 +1349,76 @@ class appDevDebugProjectContainer extends Container
     protected function getHttpKernelService()
     {
         return $this->services['http_kernel'] = new \Symfony\Component\HttpKernel\DependencyInjection\ContainerAwareHttpKernel($this->get('debug.event_dispatcher'), $this, $this->get('debug.controller_resolver'));
+    }
+
+    /**
+     * Gets the 'ivory_ck_editor.config_manager' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Ivory\CKEditorBundle\Model\ConfigManager A Ivory\CKEditorBundle\Model\ConfigManager instance.
+     * 
+     * @throws InactiveScopeException when the 'ivory_ck_editor.config_manager' service is requested while the 'request' scope is not active
+     */
+    protected function getIvoryCkEditor_ConfigManagerService()
+    {
+        if (!isset($this->scopedServices['request'])) {
+            throw new InactiveScopeException('ivory_ck_editor.config_manager', 'request');
+        }
+
+        return $this->services['ivory_ck_editor.config_manager'] = $this->scopedServices['request']['ivory_ck_editor.config_manager'] = new \Ivory\CKEditorBundle\Model\ConfigManager($this->get('templating.helper.assets'), $this->get('ivory_ck_editor.helper.assets_version_trimer'), $this->get('router'));
+    }
+
+    /**
+     * Gets the 'ivory_ck_editor.form.type' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Ivory\CKEditorBundle\Form\Type\CKEditorType A Ivory\CKEditorBundle\Form\Type\CKEditorType instance.
+     * 
+     * @throws InactiveScopeException when the 'ivory_ck_editor.form.type' service is requested while the 'request' scope is not active
+     */
+    protected function getIvoryCkEditor_Form_TypeService()
+    {
+        if (!isset($this->scopedServices['request'])) {
+            throw new InactiveScopeException('ivory_ck_editor.form.type', 'request');
+        }
+
+        return $this->services['ivory_ck_editor.form.type'] = $this->scopedServices['request']['ivory_ck_editor.form.type'] = new \Ivory\CKEditorBundle\Form\Type\CKEditorType(true, 'bundles/ivoryckeditor/', 'bundles/ivoryckeditor/ckeditor.js', $this->get('ivory_ck_editor.config_manager'), $this->get('ivory_ck_editor.plugin_manager'), $this->get('templating.helper.assets'), $this->get('ivory_ck_editor.helper.assets_version_trimer'));
+    }
+
+    /**
+     * Gets the 'ivory_ck_editor.helper.assets_version_trimer' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Ivory\CKEditorBundle\Helper\AssetsVersionTrimerHelper A Ivory\CKEditorBundle\Helper\AssetsVersionTrimerHelper instance.
+     */
+    protected function getIvoryCkEditor_Helper_AssetsVersionTrimerService()
+    {
+        return $this->services['ivory_ck_editor.helper.assets_version_trimer'] = new \Ivory\CKEditorBundle\Helper\AssetsVersionTrimerHelper();
+    }
+
+    /**
+     * Gets the 'ivory_ck_editor.plugin_manager' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Ivory\CKEditorBundle\Model\PluginManager A Ivory\CKEditorBundle\Model\PluginManager instance.
+     * 
+     * @throws InactiveScopeException when the 'ivory_ck_editor.plugin_manager' service is requested while the 'request' scope is not active
+     */
+    protected function getIvoryCkEditor_PluginManagerService()
+    {
+        if (!isset($this->scopedServices['request'])) {
+            throw new InactiveScopeException('ivory_ck_editor.plugin_manager', 'request');
+        }
+
+        return $this->services['ivory_ck_editor.plugin_manager'] = $this->scopedServices['request']['ivory_ck_editor.plugin_manager'] = new \Ivory\CKEditorBundle\Model\PluginManager($this->get('templating.helper.assets'), $this->get('ivory_ck_editor.helper.assets_version_trimer'));
     }
 
     /**
@@ -2805,9 +2925,9 @@ class appDevDebugProjectContainer extends Container
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\RoutingExtension($this->get('router')));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\YamlExtension());
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\HttpKernelExtension($this->get('fragment.handler')));
-        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'form_div_layout.html.twig')), $this->get('form.csrf_provider', ContainerInterface::NULL_ON_INVALID_REFERENCE))));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'form_div_layout.html.twig', 1 => 'IvoryCKEditorBundle:Form:ckeditor_widget.html.twig')), $this->get('form.csrf_provider', ContainerInterface::NULL_ON_INVALID_REFERENCE))));
         $instance->addExtension(new \Twig_Extension_Debug());
-        $instance->addExtension(new \Symfony\Bundle\AsseticBundle\Twig\AsseticExtension($this->get('assetic.asset_factory'), $this->get('templating.name_parser'), true, array(), array(), $this->get('assetic.value_supplier.default', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
+        $instance->addExtension(new \Symfony\Bundle\AsseticBundle\Twig\AsseticExtension($this->get('assetic.asset_factory'), $this->get('templating.name_parser'), true, array(), array(0 => 'SistemaSigNewsBundle'), $this->get('assetic.value_supplier.default', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
         $instance->addExtension(new \Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension());
         $instance->addExtension($this->get('twig.extension.acme.demo'));
         $instance->addGlobal('app', $this->get('templating.globals'));
@@ -2859,6 +2979,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath('/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/vendor/symfony/swiftmailer-bundle/Symfony/Bundle/SwiftmailerBundle/Resources/views', 'Swiftmailer');
         $instance->addPath('/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/vendor/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle/Resources/views', 'Doctrine');
         $instance->addPath('/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/src/SistemaSig/NewsBundle/Resources/views', 'SistemaSigNews');
+        $instance->addPath('/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/vendor/egeloen/ckeditor-bundle/Ivory/CKEditorBundle/Resources/views', 'IvoryCKEditor');
         $instance->addPath('/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/src/Acme/DemoBundle/Resources/views', 'AcmeDemo');
         $instance->addPath('/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views', 'WebProfiler');
         $instance->addPath('/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/views', 'SensioDistribution');
@@ -3310,6 +3431,7 @@ class appDevDebugProjectContainer extends Container
                 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
                 'SistemaSigNewsBundle' => 'SistemaSig\\NewsBundle\\SistemaSigNewsBundle',
+                'IvoryCKEditorBundle' => 'Ivory\\CKEditorBundle\\IvoryCKEditorBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
@@ -3597,6 +3719,7 @@ class appDevDebugProjectContainer extends Container
             'twig.exception_listener.controller' => 'twig.controller.exception:showAction',
             'twig.form.resources' => array(
                 0 => 'form_div_layout.html.twig',
+                1 => 'IvoryCKEditorBundle:Form:ckeditor_widget.html.twig',
             ),
             'debug.templating.engine.twig.class' => 'Symfony\\Bundle\\TwigBundle\\Debug\\TimedTwigEngine',
             'twig.options' => array(
@@ -3683,7 +3806,7 @@ class appDevDebugProjectContainer extends Container
             ),
             'assetic.cache_dir' => '/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/cache/dev/assetic',
             'assetic.bundles' => array(
-
+                0 => 'SistemaSigNewsBundle',
             ),
             'assetic.twig_extension.class' => 'Symfony\\Bundle\\AsseticBundle\\Twig\\AsseticExtension',
             'assetic.twig_formula_loader.class' => 'Assetic\\Extension\\Twig\\TwigFormulaLoader',
@@ -3703,6 +3826,21 @@ class appDevDebugProjectContainer extends Container
             'assetic.ruby.bin' => '/usr/local/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',
+            'assetic.filter.yui_css.class' => 'Assetic\\Filter\\Yui\\CssCompressorFilter',
+            'assetic.filter.yui_css.java' => '/usr/bin/java',
+            'assetic.filter.yui_css.jar' => '/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/Resources/java/yuicompressor-2.4.7.jar',
+            'assetic.filter.yui_css.charset' => 'UTF-8',
+            'assetic.filter.yui_css.stacksize' => NULL,
+            'assetic.filter.yui_css.timeout' => NULL,
+            'assetic.filter.yui_js.class' => 'Assetic\\Filter\\Yui\\JsCompressorFilter',
+            'assetic.filter.yui_js.java' => '/usr/bin/java',
+            'assetic.filter.yui_js.jar' => '/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/Resources/java/yuicompressor-2.4.7.jar',
+            'assetic.filter.yui_js.charset' => 'UTF-8',
+            'assetic.filter.yui_js.stacksize' => NULL,
+            'assetic.filter.yui_js.timeout' => NULL,
+            'assetic.filter.yui_js.nomunge' => NULL,
+            'assetic.filter.yui_js.preserve_semi' => NULL,
+            'assetic.filter.yui_js.disable_optimizations' => NULL,
             'assetic.twig_extension.functions' => array(
 
             ),
@@ -3779,6 +3917,13 @@ class appDevDebugProjectContainer extends Container
             'sensio_framework_extra.converter.doctrine.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DoctrineParamConverter',
             'sensio_framework_extra.converter.datetime.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DateTimeParamConverter',
             'sensio_framework_extra.view.listener.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\TemplateListener',
+            'ivory_ck_editor.helper.assets_version_trimer.class' => 'Ivory\\CKEditorBundle\\Helper\\AssetsVersionTrimerHelper',
+            'ivory_ck_editor.form.type.class' => 'Ivory\\CKEditorBundle\\Form\\Type\\CKEditorType',
+            'ivory_ck_editor.config_manager.class' => 'Ivory\\CKEditorBundle\\Model\\ConfigManager',
+            'ivory_ck_editor.plugin_manager.class' => 'Ivory\\CKEditorBundle\\Model\\PluginManager',
+            'ivory_ck_editor.form.type.enable' => true,
+            'ivory_ck_editor.form.type.base_path' => 'bundles/ivoryckeditor/',
+            'ivory_ck_editor.form.type.js_path' => 'bundles/ivoryckeditor/ckeditor.js',
             'web_profiler.controller.profiler.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ProfilerController',
             'web_profiler.controller.router.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\RouterController',
             'web_profiler.controller.exception.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ExceptionController',

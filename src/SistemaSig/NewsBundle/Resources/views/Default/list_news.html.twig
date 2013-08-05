@@ -2,8 +2,7 @@
 
 {% block body %}
     {# menu bar for visitors #}
-    {{ include("menu_bar_visitor.html.twig") }}
-
+    {{ include("SistemaSigNewsBundle:Default:news_sidebar_admin.html.twig") }}
 
     <div class="row-fluid">
         {# sidebar #}
@@ -14,22 +13,23 @@
             {# recent new #}
             <div class="hero-unit">
                 <div class="row">
-                    <div class="span7">
-                        <h2>Noticia reciente</h2>
+                    {% for recentNew in recentNews %}
+                        <div class="span7">
+                            <h2>{{ recentNew.title }}</h2>
 
-                        <p>
-                            <i class="icon-calendar"></i>
-                            <small>Publicado en 21/12/13</small>
-                        </p>
+                            <p>
+                                <i class="icon-calendar"></i>
+                                <small>Publicado en {{ recentNew.publishedDate|date('Y-m-d') }}</small>
+                            </p>
 
-                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo,
-                            tortor
-                            mauris condimentum nibh, ut...
-                            <a class="btn btn-primary btn-medium" href="#">Ver noticia</a></p>
+                            <p>{{ recentNew.summary }}
 
-
-                    </div>
-                    <div class="span5"><img src="../images/dos.jpg"></div>
+                                <a class="btn btn-primary btn-small"
+                                   href="{{ path('sistema_sig_news_view', {'newId':recentNew.id}) }}">Ver noticia</a>
+                            </p>
+                        </div>
+                        <div class="span5"><img src="../images/dos.jpg"></div>
+                    {% endfor %}
                 </div>
 
             </div>
@@ -37,15 +37,25 @@
             {# list of news #}
             {% for newItem in news %}
                 <div class="span5">
-                    <h3>{{ newItem.title }}</h3>
+                    {# new title #}
+                    <h4>
+                        <a href="{{ path('sistema_sig_news_view', {'newId':newItem.id}) }}">{{ newItem.title }}</a>
+                    </h4>
 
+                    {# published date #}
                     <p>
                         <i class="icon-calendar"></i>
                         <small>Publicado en {{ newItem.publishedDate|date('Y-m-d') }}</small>
-                        {{ newItem.summary }}
                     </p>
 
-                    <p><a href="#" class="btn">Leer noticia</a></p>
+                    {# summary of new #}
+                    <p>{{ newItem.summary }}</p>
+
+                    <p>
+                        <a href="{{ path('sistema_sig_news_view', {'newId':newItem.id}) }}" class="btn btn-small">
+                            Leer noticia
+                        </a>
+                    </p>
                 </div>
             {% endfor %}
 
@@ -62,4 +72,8 @@
         </div>
         <!--/span-->
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ include("SistemaSigNewsBundle:Default:jscripts.html.twig") }}
 {% endblock %}

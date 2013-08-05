@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new SistemaSig\NewsBundle\SistemaSigNewsBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            //new PunkAve\FileUploaderBundle\PunkAveFileUploaderBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

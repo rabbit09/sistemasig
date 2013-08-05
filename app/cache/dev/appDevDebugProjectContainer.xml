@@ -17,6 +17,7 @@
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="SistemaSigNewsBundle">SistemaSig\NewsBundle\SistemaSigNewsBundle</parameter>
+      <parameter key="IvoryCKEditorBundle">Ivory\CKEditorBundle\IvoryCKEditorBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -298,6 +299,7 @@
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>IvoryCKEditorBundle:Form:ckeditor_widget.html.twig</parameter>
     </parameter>
     <parameter key="debug.templating.engine.twig.class">Symfony\Bundle\TwigBundle\Debug\TimedTwigEngine</parameter>
     <parameter key="twig.options" type="collection">
@@ -377,7 +379,9 @@
     <parameter key="assetic.value_supplier.class">Symfony\Bundle\AsseticBundle\DefaultValueSupplier</parameter>
     <parameter key="assetic.node.paths" type="collection"/>
     <parameter key="assetic.cache_dir">/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/cache/dev/assetic</parameter>
-    <parameter key="assetic.bundles" type="collection"/>
+    <parameter key="assetic.bundles" type="collection">
+      <parameter>SistemaSigNewsBundle</parameter>
+    </parameter>
     <parameter key="assetic.twig_extension.class">Symfony\Bundle\AsseticBundle\Twig\AsseticExtension</parameter>
     <parameter key="assetic.twig_formula_loader.class">Assetic\Extension\Twig\TwigFormulaLoader</parameter>
     <parameter key="assetic.helper.dynamic.class">Symfony\Bundle\AsseticBundle\Templating\DynamicAsseticHelper</parameter>
@@ -394,6 +398,21 @@
     <parameter key="assetic.ruby.bin">/usr/local/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>
+    <parameter key="assetic.filter.yui_css.class">Assetic\Filter\Yui\CssCompressorFilter</parameter>
+    <parameter key="assetic.filter.yui_css.java">/usr/bin/java</parameter>
+    <parameter key="assetic.filter.yui_css.jar">/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/Resources/java/yuicompressor-2.4.7.jar</parameter>
+    <parameter key="assetic.filter.yui_css.charset">UTF-8</parameter>
+    <parameter key="assetic.filter.yui_css.stacksize">null</parameter>
+    <parameter key="assetic.filter.yui_css.timeout">null</parameter>
+    <parameter key="assetic.filter.yui_js.class">Assetic\Filter\Yui\JsCompressorFilter</parameter>
+    <parameter key="assetic.filter.yui_js.java">/usr/bin/java</parameter>
+    <parameter key="assetic.filter.yui_js.jar">/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/Resources/java/yuicompressor-2.4.7.jar</parameter>
+    <parameter key="assetic.filter.yui_js.charset">UTF-8</parameter>
+    <parameter key="assetic.filter.yui_js.stacksize">null</parameter>
+    <parameter key="assetic.filter.yui_js.timeout">null</parameter>
+    <parameter key="assetic.filter.yui_js.nomunge">null</parameter>
+    <parameter key="assetic.filter.yui_js.preserve_semi">null</parameter>
+    <parameter key="assetic.filter.yui_js.disable_optimizations">null</parameter>
     <parameter key="assetic.twig_extension.functions" type="collection"/>
     <parameter key="assetic.controller.class">Symfony\Bundle\AsseticBundle\Controller\AsseticController</parameter>
     <parameter key="assetic.routing_loader.class">Symfony\Bundle\AsseticBundle\Routing\AsseticLoader</parameter>
@@ -466,6 +485,13 @@
     <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
     <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
     <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
+    <parameter key="ivory_ck_editor.helper.assets_version_trimer.class">Ivory\CKEditorBundle\Helper\AssetsVersionTrimerHelper</parameter>
+    <parameter key="ivory_ck_editor.form.type.class">Ivory\CKEditorBundle\Form\Type\CKEditorType</parameter>
+    <parameter key="ivory_ck_editor.config_manager.class">Ivory\CKEditorBundle\Model\ConfigManager</parameter>
+    <parameter key="ivory_ck_editor.plugin_manager.class">Ivory\CKEditorBundle\Model\PluginManager</parameter>
+    <parameter key="ivory_ck_editor.form.type.enable">true</parameter>
+    <parameter key="ivory_ck_editor.form.type.base_path">bundles/ivoryckeditor/</parameter>
+    <parameter key="ivory_ck_editor.form.type.js_path">bundles/ivoryckeditor/ckeditor.js</parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -1047,6 +1073,7 @@
               <argument key="reset">form.type.reset</argument>
               <argument key="currency">form.type.currency</argument>
               <argument key="entity">form.type.entity</argument>
+              <argument key="ckeditor">ivory_ck_editor.form.type</argument>
             </argument>
             <argument type="collection">
               <argument key="form" type="collection">
@@ -1959,6 +1986,7 @@
                   <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
                     <argument type="collection">
                       <argument>form_div_layout.html.twig</argument>
+                      <argument>IvoryCKEditorBundle:Form:ckeditor_widget.html.twig</argument>
                     </argument>
                   </service>
                 </argument>
@@ -1984,7 +2012,9 @@
             <argument type="service" id="templating.name_parser"/>
             <argument>true</argument>
             <argument type="collection"/>
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument>SistemaSigNewsBundle</argument>
+            </argument>
             <argument type="service" id="assetic.value_supplier.default" on-invalid="null"/>
           </service>
         </argument>
@@ -2045,6 +2075,8 @@
       <argument type="service" id="service_container"/>
       <argument type="collection">
         <argument key="cssrewrite">assetic.filter.cssrewrite</argument>
+        <argument key="yui_css">assetic.filter.yui_css</argument>
+        <argument key="yui_js">assetic.filter.yui_js</argument>
       </argument>
     </service>
     <service id="assetic.asset_manager" class="Assetic\Factory\LazyAssetManager">
@@ -2069,6 +2101,33 @@
           </service>
         </argument>
       </argument>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SistemaSigNewsBundle</argument>
+                  <argument>/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/Resources/SistemaSigNewsBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SistemaSigNewsBundle</argument>
+                  <argument>/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/src/SistemaSig/NewsBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
       <call method="addResource">
         <argument type="service">
           <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource" public="false">
@@ -2104,6 +2163,43 @@
     </service>
     <service id="assetic.filter.cssrewrite" class="Assetic\Filter\CssRewriteFilter">
       <tag name="assetic.filter" alias="cssrewrite"/>
+    </service>
+    <service id="assetic.filter.yui_css" class="Assetic\Filter\Yui\CssCompressorFilter">
+      <tag name="assetic.filter" alias="yui_css"/>
+      <argument>/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/Resources/java/yuicompressor-2.4.7.jar</argument>
+      <argument>/usr/bin/java</argument>
+      <call method="setCharset">
+        <argument>UTF-8</argument>
+      </call>
+      <call method="setTimeout">
+        <argument>null</argument>
+      </call>
+      <call method="setStackSize">
+        <argument>null</argument>
+      </call>
+    </service>
+    <service id="assetic.filter.yui_js" class="Assetic\Filter\Yui\JsCompressorFilter">
+      <tag name="assetic.filter" alias="yui_js"/>
+      <argument>/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/app/Resources/java/yuicompressor-2.4.7.jar</argument>
+      <argument>/usr/bin/java</argument>
+      <call method="setCharset">
+        <argument>UTF-8</argument>
+      </call>
+      <call method="setTimeout">
+        <argument>null</argument>
+      </call>
+      <call method="setStackSize">
+        <argument>null</argument>
+      </call>
+      <call method="setNomunge">
+        <argument>null</argument>
+      </call>
+      <call method="setPreserveSemi">
+        <argument>null</argument>
+      </call>
+      <call method="setDisableOptimizations">
+        <argument>null</argument>
+      </call>
     </service>
     <service id="assetic.controller" class="Symfony\Bundle\AsseticBundle\Controller\AsseticController" scope="prototype">
       <argument type="service" id="request"/>
@@ -2309,6 +2405,26 @@
     </service>
     <service id="sensio_framework_extra.cache.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\CacheListener">
       <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="ivory_ck_editor.helper.assets_version_trimer" class="Ivory\CKEditorBundle\Helper\AssetsVersionTrimerHelper"/>
+    <service id="ivory_ck_editor.form.type" class="Ivory\CKEditorBundle\Form\Type\CKEditorType" scope="request">
+      <tag name="form.type" alias="ckeditor"/>
+      <argument>true</argument>
+      <argument>bundles/ivoryckeditor/</argument>
+      <argument>bundles/ivoryckeditor/ckeditor.js</argument>
+      <argument type="service" id="ivory_ck_editor.config_manager"/>
+      <argument type="service" id="ivory_ck_editor.plugin_manager"/>
+      <argument type="service" id="templating.helper.assets"/>
+      <argument type="service" id="ivory_ck_editor.helper.assets_version_trimer"/>
+    </service>
+    <service id="ivory_ck_editor.config_manager" class="Ivory\CKEditorBundle\Model\ConfigManager" scope="request">
+      <argument type="service" id="templating.helper.assets"/>
+      <argument type="service" id="ivory_ck_editor.helper.assets_version_trimer"/>
+      <argument type="service" id="router"/>
+    </service>
+    <service id="ivory_ck_editor.plugin_manager" class="Ivory\CKEditorBundle\Model\PluginManager" scope="request">
+      <argument type="service" id="templating.helper.assets"/>
+      <argument type="service" id="ivory_ck_editor.helper.assets_version_trimer"/>
     </service>
     <service id="twig.extension.acme.demo" class="Acme\DemoBundle\Twig\Extension\DemoExtension" public="false">
       <tag name="twig.extension"/>
@@ -2638,6 +2754,10 @@
       <call method="addPath">
         <argument>/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/src/SistemaSig/NewsBundle/Resources/views</argument>
         <argument>SistemaSigNews</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/vendor/egeloen/ckeditor-bundle/Ivory/CKEditorBundle/Resources/views</argument>
+        <argument>IvoryCKEditor</argument>
       </call>
       <call method="addPath">
         <argument>/Users/darvein/Dev/Consultoria/sigmigraciones/sistemasig/src/Acme/DemoBundle/Resources/views</argument>

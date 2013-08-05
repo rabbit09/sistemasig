@@ -14,4 +14,6 @@ AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 /*AnnotationRegistry::registerAutoloadNamespace('Fightmaster', __DIR__ . '/../vendor/dao/src');
 AnnotationRegistry::registerAutoloadNamespace('Fightmaster', __DIR__ . '/../vendor/bundles');*/
 
+//AnnotationRegistry::registerAutoloadNamespace('PunkAve', __DIR__ . '/../vendor/bundles');
+
 return $loader;

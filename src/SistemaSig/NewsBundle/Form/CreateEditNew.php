@@ -42,21 +42,14 @@ class CreateEditNew extends AbstractType
                         array(
                             'name' => 'document',
                             'items' => array(
-                                'Source',
-                                '-',
                                 'Save',
                                 'NewPage',
                                 'DocProps',
                                 'Preview',
                                 'Print',
                                 '-',
-                                'Templates'
-                            ),
-                        ),
-                        '/',
-                        array(
-                            'name' => 'basicstyles',
-                            'items' => array(
+                                'Templates',
+                                '-',
                                 'Bold',
                                 'Italic',
                                 'Underline',
@@ -68,10 +61,10 @@ class CreateEditNew extends AbstractType
                                 '-',
                                 'Image'
                             ),
-                        ),
+                        )
                     ),
                     'language' => 'es',
-                    'filebrowserUploadUrl' => '/media/'
+                    'filebrowserUploadUrl' => '/uploader/upload.php'
                 ),
             )
         );

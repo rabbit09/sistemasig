@@ -1,0 +1,27 @@
+{% extends '::menu_bar_visitor.html.twig' %}
+
+
+{% block module_home_link %}
+    <a href="{{ path('sistema_sig_news_homepage') }}" class="brand">Portada de noticias</a>
+{% endblock %}
+
+{% block dropdown_items %}
+    <li class="dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle" role="button" href="#" id="drop1">
+            Noticias <b class="caret"></b></a>
+        <ul aria-labelledby="drop1" role="menu" class="dropdown-menu">
+            <li role="presentation">
+                <a href="{{ path('sistema_sig_news_create') }}" tabindex="-1" role="menuitem">
+                    Agregar nueva noticia
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="{{ path('sistema_sig_news_admin') }}" tabindex="-1" role="menuitem">
+                    Administrar noticias
+                </a>
+            </li>
+            {#<li class="divider" role="presentation"></li>
+            <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Menu externo</a></li>#}
+        </ul>
+    </li>
+{% endblock %}

@@ -2,7 +2,7 @@
 
 {% block body %}
     {# menu bar for visitors #}
-    {{ include("menu_bar_visitor.html.twig") }}
+    {{ include("SistemaSigNewsBundle:Default:news_sidebar_admin.html.twig") }}
 
     <div class="row-fluid">
         {# sidebar #}
@@ -54,7 +54,7 @@
                         <td>
                             <p class="btn-group">
                                 <a class="  btn btn-small"
-                                   href="{{ path('sistema_sig_news_edit', {'newId':newItem.id}) }}">
+                                   href="{{ path('sistema_sig_news_view', {'newId':newItem.id}) }}">
                                     <i class="icon-eye-open"></i>
                                     Ver
                                 </a>
