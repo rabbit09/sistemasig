@@ -88,3 +88,15 @@ body {
 .btn-width-medium{
     width: 90px;
 }
+
+/* centered jquery ui tabs */
+#tabs.jqueryui-tabs-centered .ui-tabs-nav {
+    height: 2.55em !important;
+    text-align: center !important;
+}
+#tabs.jqueryui-tabs-centered .ui-tabs-nav li {
+    display: inline-block !important;
+    float: none !important;
+    top: 0px !important;
+    margin: 0em !important;
+}
