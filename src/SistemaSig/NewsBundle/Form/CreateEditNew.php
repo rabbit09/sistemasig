@@ -127,7 +127,7 @@ class CreateEditNew extends AbstractType
             'create',
             'submit',
             array(
-                'label' => 'Crear noticia',
+                'label' => 'Guardar noticia',
                 'attr' => array('class' => 'btn btn-medium btn-primary')
             )
         );
